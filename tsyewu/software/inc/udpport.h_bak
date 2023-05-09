@@ -1,0 +1,64 @@
+#ifndef _UDP_PORT_H__
+#define _UDP_PORT_H__
+
+
+#define PRODUCT_TYPE                                         0x0000
+#define PRODUCT_MODEL                                     0x0010
+#define HARDWARE_VERSION                             0x0011
+#define SOFTWARE_VERSION                               0x0013
+#define PROTOCOL_VERSION                               0x0015
+#define COMPILE_TIME                                            0x0016
+#define DEVICE_UNIQUE_IDENTIFY                     0x0026
+
+#define FIRMWARE_UPGRADE                             0x0400
+#define TERMINAL_STATUS                                   0x0401
+#define PUSH_CARD_STATUS                              0x0402
+#define OBTAIN_VIN_STATUS                               0x0403
+#define CARD_DATA                                                0x0404
+#define OBTAIN_VIN                                                 0x0419
+#define OUTPUT_VOL                                               0x0421
+#define OUTPUT_CURRENT                                   0x0423
+#define OUTPUT_POWER_RATE                          0x0425
+#define OUTPUT_POWER                                       0x0428
+#define GUN_LINE_TEMP                                       0x0429
+#define ELECTRIC_LOCK                                       0x042b
+#define K1K2_STATUS                                            0x042c
+#define METER_CONNECT_STATUS                  0x042d
+#define METER_WORK_STATUS                         0x042e
+#define START_K1K2_VOL                                   0x042f
+#define START_CHARGE_TIME                           0x0430
+#define STOP_CHARGE_TIME                              0x0432
+#define IDENTIFY_SEGMENT                                0x0434
+#define CONFIG_SEGMENT                                   0x044b
+#define CHARGING_SEGMENT                            0x0452
+#define CHARGING_STOP_SEGMENT               0x045d
+#define CHARGE_STATISTICS_SEGMENT       0x045e
+#define BMS_DAULT_INFO                                   0x0464
+#define CHARGER_FAULT_INFO                        0x0466
+#define SECTION_ONE_POWER                          0x0467
+#define SECTION_TWO_POWER                         0x0469
+#define SECTION_THREE_POWER                     0x046b
+#define SECTION_FOUR_POWER                        0x046d
+#define SECTION_FIVE_POWER                          0x046f
+#define SECTION_SIX_POWER                            0x0471
+#define SECTION_SEVEN_POWER                    0x0473
+#define SECTION_EIGHT_POWER                      0x0475
+#define SECTION_NINE_POWER                        0x0477
+#define SECTION_TEN_POWER                          0x0479
+#define SECTION_ELEVEN_POWER                  0x047b
+#define SECTION_TWELVE_POWER                  0x047d
+#define SECTION_THIRTEEN_POWER              0x047f
+#define SECTION_FOURTEEN_POWER            0x0481
+#define SECTION_FIFTEEN_POWER                  0x0483
+#define SECTION_SIXTEEN_POWER                  0x0485
+#define SECTION_SEVENTEEN_POWER          0x0487
+#define SECTION_EIGHTEEN_POWER              0x0489
+#define SECTION_NINETEEN_POWER               0x048b
+#define SECTION_TWENTY_POWER                   0x048d
+#define SECTION_TWENTY_ONE_POWER        0x048f
+#define SECTION_TWENTY_TWO_POWER        0x0491
+
+
+
+
+#endif

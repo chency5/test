@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../hardware/socket/inc/socket.h
+
+../tool/json/inc/log.h
+
+../tool/public/inc/public.h
+
+../tool/public/inc/type.h
+
+../tool/timer/inc/timer.h
+
+/home/forlinx/shell/tsyewu/hardware/socket/src/socket.c
+stdio.h
+-
+socket.h
+/home/forlinx/shell/tsyewu/hardware/socket/src/socket.h
+log.h
+/home/forlinx/shell/tsyewu/hardware/socket/src/log.h
+timer.h
+/home/forlinx/shell/tsyewu/hardware/socket/src/timer.h
+public.h
+/home/forlinx/shell/tsyewu/hardware/socket/src/public.h
+type.h
+/home/forlinx/shell/tsyewu/hardware/socket/src/type.h
+

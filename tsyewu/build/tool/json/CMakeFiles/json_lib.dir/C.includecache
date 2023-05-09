@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../tool/json/inc/log.h
+
+../tool/json/inc/socket_cJSON.h
+
+/home/forlinx/shell/tsyewu/tool/json/src/log.c
+stdio.h
+-
+log.h
+/home/forlinx/shell/tsyewu/tool/json/src/log.h
+
+/home/forlinx/shell/tsyewu/tool/json/src/socket_cJSON.c
+string.h
+-
+stdio.h
+-
+math.h
+-
+stdlib.h
+-
+float.h
+-
+limits.h
+-
+ctype.h
+-
+socket_cJSON.h
+/home/forlinx/shell/tsyewu/tool/json/src/socket_cJSON.h
+

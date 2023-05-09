@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../software/inc/init.h
+
+/home/forlinx/shell/tsyewu/tscharger.c
+stdio.h
+-
+init.h
+/home/forlinx/shell/tsyewu/init.h
+

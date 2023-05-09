@@ -1,0 +1,14 @@
+#ifndef _GOOSE_PORT_H__
+#define _GOOSE_PORT_H__
+
+
+void sendGooseData(char *sendBuf);
+
+void sendTestData();
+
+//void recvGooseData(char *recvBuf);
+
+void gooseInitFunction();
+
+
+#endif 

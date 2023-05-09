@@ -1,0 +1,192 @@
+#ifndef __CHARGER_DATA_H__
+#define __CHARGER_DATA_H__
+
+
+
+
+#define YW_ADDR                         0xa0
+#define YW_HEARTBEAT            0xd0
+
+#define PRIORIRY_6                      0x18
+#define PRIORITY_5                       0x14
+
+#define CH_TERMINAL_0             0x40
+#define CH_TERMINAL_1             0x41
+#define CH_TERMINAL_2             0x42
+#define CH_TERMINAL_3             0x43
+#define CH_TERMINAL_4             0x44
+#define CH_TERMINAL_5             0x45
+#define CH_TERMINAL_6             0x46
+#define CH_TERMINAL_7             0x47
+#define CH_TERMINAL_8             0x48
+#define CH_TERMINAL_9             0x49
+#define CH_TERMINAL_10           0x4a
+#define CH_TERMINAL_11           0x4b
+#define CH_TERMINAL_12           0x4c
+#define CH_TERMINAL_13           0x4d
+#define CH_TERMINAL_14           0x4e
+#define CH_TERMINAL_15           0x4f
+
+#define PW_TERMINAL                 0x60
+
+#define BROAD_CAST                  0x8f
+
+
+#define CH_HEARTBEAT             0x10
+
+#define CARD_CONNECT                                 0x11       //yewu >>  ch
+
+#define CARD_PHY_NUM                                 0x12
+#define CARD_CUSTOME_NUM_1                 0x13
+#define CARD_CUSTOME_NUM_2                 0x14
+#define CARD_RAND_NUM_1                      0x15
+#define CARD_RAND_NUM_2                      0x16
+
+#define SETTLE_MONEY                                 0x19    // yewu >>  ch
+
+#define CARD_REMIND_MONEY                  0x1a
+
+#define CHECK_IDENTY_CARD                  0x20   //yewu >>  ch
+
+#define IDENTY_REPLY                                  0x21
+
+#define BMS_IDENTIFY_STAGE                   0x24  //yewu >>  ch
+
+#define BMS_IDENTIFY_DATA_1                0x25
+#define BMS_IDENTIFY_DATA_2                0x26
+#define BMS_IDENTIFY_DATA_3                0x27
+#define BMS_IDENTIFY_DATA_4                0x28
+#define BMS_IDENTIFY_DATA_5                0x29
+#define BMS_IDENTIFY_DATA_6                0x2a
+
+#define BMS_CONFIG_STAGE                     0x30   //yewu >>  ch
+
+#define BMS_BATTERY_INFO_1                  0x31
+#define BMS_BATTERY_INFO_2                  0x32
+
+#define BMS_READY_STAGE                       0x35   //yewu >>  ch
+
+#define READY_STAGE_REPLAY               0x36
+
+#define BMS_CHARGE_STAGE                  0x38   //yewu >>  ch
+
+#define BMS_CHARGER_DATA_1            0x39
+#define BMS_CHARGER_DATA_2            0x3A
+#define BMS_CHARGER_DATA_3            0x3B
+
+#define DOWN_LOAD_STOP_MESG         0x40  //yewu >>  ch     do not define
+
+#define STOP_MESG_REPLY                      0x41   // do not define
+
+#define BMS_STOP_STAGE                         0x42  //yewu >>  ch
+
+#define BMS_STOP_REASON                     0x43
+
+#define BMS_STATISTIC_MESG                 0x48    //yewu >>  ch
+
+#define BMS_STATISTIC_MESG_REPLY_1      0x49
+#define BMS_STATISTIC_MESG_REPLY_2      0x4a
+
+#define BMS_VEHICLE_MESG                             0x50  //yewu >>  ch
+
+#define BMS_VEHICLE_MESG_REPLY             0x51
+
+#define CHARGER_MESG                                     0x54  //yewu >>  ch
+
+#define CHARGER_MESG_REPLY                     0x55
+
+#define ELECTRIC_MATER_MESG                    0x58 //yewu >>  ch
+
+#define ELECTRIC_MATER_MESG_REPLY     0x59
+
+#define CHARGER_COST_MESG                        0x60   //yewu >>  ch
+
+#define CHARGER_COST_MESG_REPLY         0x61
+
+#define PW_HEARTBEAT                           0xa0
+
+#define PW_FAULT_MESG                         0xa1    //yewu >>  pw
+
+#define PW_FAULT_MESG_REPLY_1    0xa2
+#define PW_FAULT_MESG_REPLY_2    0xa3
+#define PW_FAULT_MESG_REPLY_3    0xa4
+#define PW_FAULT_MESG_REPLY_4    0xa5
+
+#define PW_CONFIG_MESG                                0xA9   //yewu >>  pw
+#define PW_CONFIG_MESG_REPLY                0xaa
+
+#define PW_PHASE_MESG                           0xb0    //yewu >>  pw
+
+#define PW_PHASE_MESG_REPLY_1                   0xb1
+#define PW_PHASE_MESG_REPLY_2                   0xb2
+
+
+
+
+#define BMS_IDEL                                       0x00
+#define BMS_PLUG_IN                               0x01
+#define BMS_AUX_POWER                      0x02
+#define BMS_HAND_SHAKE                   0x03
+#define BMS_CONFIG                                 0x04
+#define BMS_CHARGING                          0x05
+#define BMS_FINISH                                   0x06
+
+#define BMS_UP_GRADE                         0x09
+#define BMS_ERR                                       0xff
+
+
+typedef struct {
+	int can_id;      /* 32 bit CAN_ID + EFF/RTR/ERR flags */
+    	unsigned char    length; /* data length code: 0 .. 8 */
+    	unsigned char    data[8] __attribute__((aligned(8)));
+}canFrame;
+
+
+
+typedef struct{
+	char priority;
+	char pgn;
+	char dest;
+	char len;
+	char dataBuf[10];
+}getCanData;
+
+
+typedef enum{
+	CHARGER_ONE,
+	CHARGER_TWO,
+	CHARGER_THREE,
+	CHARGER_FOUR,
+	CHARGER_FIVE,
+	CHARGER_SIX,
+	CHARGER_SEVEN,
+	CHARGER_EIGHT,
+	CHARGER_NINE,
+	CHARGER_TEN,
+	CHARGER_ELEVEN,
+	CHARGER_TWELVE,
+	CHARGER_THIRTEEN,
+	CHARGER_FOURTEEN,
+	CHARGER_FIFTEEN,
+	CHARGER_SIXTEEN,
+	CHARGER_PW
+}destInfo;
+
+
+typedef struct{
+	char sectionNum;
+	char sctionState;
+	
+	int sectionPower;
+}sectionTimeInfo;
+
+
+
+void cardIdentifyData(char dest);
+
+
+
+
+
+
+#endif

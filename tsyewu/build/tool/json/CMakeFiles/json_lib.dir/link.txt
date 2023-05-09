@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/libjson_lib.a  CMakeFiles/json_lib.dir/src/log.c.o CMakeFiles/json_lib.dir/src/socket_cJSON.c.o
+/usr/bin/ranlib ../../lib/libjson_lib.a

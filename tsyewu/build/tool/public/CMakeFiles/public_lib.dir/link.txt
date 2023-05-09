@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/libpublic_lib.a  CMakeFiles/public_lib.dir/src/crc.c.o CMakeFiles/public_lib.dir/src/public.c.o CMakeFiles/public_lib.dir/src/type.c.o CMakeFiles/public_lib.dir/src/utily.c.o
+/usr/bin/ranlib ../../lib/libpublic_lib.a
