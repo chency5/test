@@ -652,7 +652,7 @@ void chargeRealDataFrame(int gunNum){
 	return;
 }
 
-void BMSDataFrame(int gunNum){
+void BMSStartFrame(int gunNum){
 	char buf[200] = {0};
 	int i = 0,k;
 		for(k = 0 ; k < 32 ; k ++){
@@ -733,7 +733,116 @@ void BMSDataFrame(int gunNum){
 	buf[i ++] = 0xff;
 	
 	pthread_mutex_lock(&fengChongLock);
-	framingSendData((gunNum + 1),BMS_MES_UP,buf,i);
+	framingSendData((gunNum + 1),BMS_START_UP,buf,i);
+	pthread_mutex_unlock(&fengChongLock);
+
+	return;
+}
+
+
+void BMSDataFrame(int gunNum){
+	char buf[200] = {0};
+	int i = 0,k;
+		for(k = 0 ; k < 32 ; k ++){
+		buf[i ++] = getUserAccountInfo(gunNum).cloudTradeNum[k];
+	}
+	for(k = 0; k < 32 ; k ++){
+		buf[i ++] = getChargerBlockInfo(gunNum).chargingList[k];
+	}
+	switch(getChargerBlockInfo(gunNum).gunState){
+		case IDEL: buf[i ++] = 0; break;
+		case PLUG_IN: buf[i ++] = 1; break;
+		case HANDSHAKE: buf[i ++] = 5; break;
+		case CONFIG: buf[i ++] = 5; break;
+		case CHARGING: buf[i ++] = 2; break;
+		case STOP: buf[i ++] = 7; break;
+		case FINISH_PLUG_IN: buf[i ++] = 3; break;
+		case UPGRADE: buf[i ++] = 0; break;
+		case FAULT: buf[i ++] = 6; break;
+		default: i++;break;
+	}	
+	buf[i ++] = getChargerBlockInfo(gunNum).requireVol>> 24 & 0xff;
+	buf[i ++] = getChargerBlockInfo(gunNum).requireVol >> 16 & 0xff;
+	buf[i ++] = getChargerBlockInfo(gunNum).requireVol >> 8 & 0xff;
+	buf[i ++] = getChargerBlockInfo(gunNum).requireVol & 0xff;
+	buf[i ++] = getChargerBlockInfo(gunNum).requireCurrent>> 24 & 0xff;
+	buf[i ++] = getChargerBlockInfo(gunNum).requireCurrent >> 16 & 0xff;
+	buf[i ++] = getChargerBlockInfo(gunNum).requireCurrent >> 8 & 0xff;
+	buf[i ++] = getChargerBlockInfo(gunNum).requireCurrent & 0xff;
+	buf[i ++] = getChargerBlockInfo(gunNum).chargeMode ;
+	buf[i ++] = getChargerBlockInfo(gunNum).chargingVol>> 24 & 0xff;
+	buf[i ++] = getChargerBlockInfo(gunNum).chargingVol >> 16 & 0xff;
+	buf[i ++] = getChargerBlockInfo(gunNum).chargingVol >> 8 & 0xff;
+	buf[i ++] = getChargerBlockInfo(gunNum).chargingVol & 0xff;
+	buf[i ++] = getChargerBlockInfo(gunNum).chargingCurrent>> 24 & 0xff;
+	buf[i ++] = getChargerBlockInfo(gunNum).chargingCurrent >> 16 & 0xff;
+	buf[i ++] = getChargerBlockInfo(gunNum).chargingCurrent >> 8 & 0xff;
+	buf[i ++] = getChargerBlockInfo(gunNum).chargingCurrent & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).maxBatteryVol>> 24 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).maxBatteryVol >> 16 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).maxBatteryVol >> 8 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).maxBatteryVol & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).singleBatteryMaxNum ;
+	buf[i ++] = getChargerBlockInfo(gunNum).currentSoc >> 8 & 0xff;
+	buf[i ++] = getChargerBlockInfo(gunNum).currentSoc & 0xff;
+	buf[i ++] = getChargerBlockInfo(gunNum).remaindTime >> 24 & 0xff;
+	buf[i ++] = getChargerBlockInfo(gunNum).remaindTime >> 16 & 0xff;
+	buf[i ++] = getChargerBlockInfo(gunNum).remaindTime >> 8 & 0xff;
+	buf[i ++] = getChargerBlockInfo(gunNum).remaindTime & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).singleBatteryMaxVolAtNum ;
+	buf[i ++] = getBatteryBlockInfo(gunNum).maxBatteryTemp ;
+	buf[i ++] = getBatteryBlockInfo(gunNum).maxTempCheckNum ;
+	buf[i ++] = getBatteryBlockInfo(gunNum).minBatteryTemp ;
+	buf[i ++] = getBatteryBlockInfo(gunNum).minTempCheckNum ;
+	buf[i ++] = getBatteryBlockInfo(gunNum).singleBatteryVolTooHorL ;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batterySocTooHorL ;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryOverCurrent ;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryOverTemp ;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryInsulationState ;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryConnectState ;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryAllowCharge ;
+
+
+	pthread_mutex_lock(&fengChongLock);
+	framingSendData((gunNum + 1),BMS_DATA_UP,buf,i);
+	pthread_mutex_unlock(&fengChongLock);
+
+	return;
+}
+
+void BMSEndFrame(int gunNum){
+	char buf[200] = {0};
+	int i = 0,k;
+	for(k = 0 ; k < 32 ; k ++){
+		buf[i ++] = getUserAccountInfo(gunNum).cloudTradeNum[k];
+	}
+	for(k = 0; k < 32 ; k ++){
+		buf[i ++] = getChargerBlockInfo(gunNum).chargingList[k];
+	}
+	switch(getChargerBlockInfo(gunNum).gunState){
+		case IDEL: buf[i ++] = 0; break;
+		case PLUG_IN: buf[i ++] = 1; break;
+		case HANDSHAKE: buf[i ++] = 5; break;
+		case CONFIG: buf[i ++] = 5; break;
+		case CHARGING: buf[i ++] = 2; break;
+		case STOP: buf[i ++] = 7; break;
+		case FINISH_PLUG_IN: buf[i ++] = 3; break;
+		case UPGRADE: buf[i ++] = 0; break;
+		case FAULT: buf[i ++] = 6; break;
+		default: i++;break;
+	}	
+	buf[i ++] = getChargerBlockInfo(gunNum).currentSoc;
+	buf[i ++] = getBatteryBlockInfo(gunNum).minBatteryVol >> 8 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).minBatteryVol & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).maxBatteryVol >> 8 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).maxBatteryVol & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).minBatteryTemp ;
+	buf[i ++] = getBatteryBlockInfo(gunNum).maxBatteryTemp ;
+
+
+
+	pthread_mutex_lock(&fengChongLock);
+	framingSendData((gunNum + 1),BMS_END_UP,buf,i);
 	pthread_mutex_unlock(&fengChongLock);
 
 	return;
@@ -1653,7 +1762,7 @@ void parseFengChongRecvData(char cmdNum,int gunNum,char *getBuf){
 
 		}break;
 
-		case BMS_MES_DOWN:{
+		case BMS_START_DOWN:{
 			BMSFlag[gunNum] = 0;
 		}break;
 
@@ -1762,14 +1871,19 @@ void fengChongTimer(){
 					if(getChargerBlockInfo(i).isStartCharge == WORK_STATE){
 						if(!(fengchongClick%300-10)){
 							chargeRealDataFrame(i);
+							mSleep(5);
 						}
 						if(gunWorkBuf[i] == 0){
 							gunWorkBuf[i] = 1;
-							BMSDataFrame(i);
+							BMSStartFrame(i);
 							BMSFlag[i] = 1;
 						}
 						if(BMSFlag[i] && !(fengchongClick%50)){
+							BMSStartFrame(i);
+						}
+						if(!(fengchongClick%300-20)){
 							BMSDataFrame(i);
+							mSleep(5);
 						}
 					}else{
 						if(gunWorkBuf[i] == 1){
@@ -1778,9 +1892,6 @@ void fengChongTimer(){
 							mSleep(5);
 							historyUpFrame();
 						}
-						// historyFrame(i);
-				//		activeUpLoadFrame(i);
-						// mSleep(1000);
 					}
 				}
 				if(!(fengchongClick%100-20))

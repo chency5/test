@@ -76,8 +76,14 @@
 #define OUTPUT_CONTROL_DOWN       0x3F
 #define OUTPUT_CONTROL_UP              0xBF
 
-#define BMS_MES_UP									0x40
-#define BMS_MES_DOWN							0xC0
+#define BMS_START_UP									0x40
+#define BMS_START_DOWN							0xC0
+
+#define BMS_DATA_UP									0x41
+#define BMS_DATA_DOWN							0xC1
+
+#define BMS_END_UP									0x42
+#define BMS_END_DOWN							0xC2
 
 #define FC_HISTORY_MESSAGE_LEN				402
 
