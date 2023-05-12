@@ -76,6 +76,9 @@
 #define OUTPUT_CONTROL_DOWN       0x3F
 #define OUTPUT_CONTROL_UP              0xBF
 
+#define BMS_MES_UP									0x40
+#define BMS_MES_DOWN							0xC0
+
 #define FC_HISTORY_MESSAGE_LEN				402
 
 typedef struct{

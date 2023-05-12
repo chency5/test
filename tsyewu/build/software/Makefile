@@ -1826,6 +1826,33 @@ pingtaiport/guowang/examples/device_example_pile.c.s:
 	cd /home/forlinx/shell/tsyewu/build && $(MAKE) -f software/CMakeFiles/fun_lib.dir/build.make software/CMakeFiles/fun_lib.dir/pingtaiport/guowang/examples/device_example_pile.c.s
 .PHONY : pingtaiport/guowang/examples/device_example_pile.c.s
 
+pingtaiport/sourcenetwork/src/netconnect.o: pingtaiport/sourcenetwork/src/netconnect.c.o
+
+.PHONY : pingtaiport/sourcenetwork/src/netconnect.o
+
+# target to build an object file
+pingtaiport/sourcenetwork/src/netconnect.c.o:
+	cd /home/forlinx/shell/tsyewu/build && $(MAKE) -f software/CMakeFiles/fun_lib.dir/build.make software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.o
+.PHONY : pingtaiport/sourcenetwork/src/netconnect.c.o
+
+pingtaiport/sourcenetwork/src/netconnect.i: pingtaiport/sourcenetwork/src/netconnect.c.i
+
+.PHONY : pingtaiport/sourcenetwork/src/netconnect.i
+
+# target to preprocess a source file
+pingtaiport/sourcenetwork/src/netconnect.c.i:
+	cd /home/forlinx/shell/tsyewu/build && $(MAKE) -f software/CMakeFiles/fun_lib.dir/build.make software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.i
+.PHONY : pingtaiport/sourcenetwork/src/netconnect.c.i
+
+pingtaiport/sourcenetwork/src/netconnect.s: pingtaiport/sourcenetwork/src/netconnect.c.s
+
+.PHONY : pingtaiport/sourcenetwork/src/netconnect.s
+
+# target to generate assembly for a file
+pingtaiport/sourcenetwork/src/netconnect.c.s:
+	cd /home/forlinx/shell/tsyewu/build && $(MAKE) -f software/CMakeFiles/fun_lib.dir/build.make software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.s
+.PHONY : pingtaiport/sourcenetwork/src/netconnect.c.s
+
 pingtaiport/tsfengchong/src/fengchong.o: pingtaiport/tsfengchong/src/fengchong.c.o
 
 .PHONY : pingtaiport/tsfengchong/src/fengchong.o
@@ -2267,6 +2294,9 @@ help:
 	@echo "... pingtaiport/guowang/examples/device_example_pile.o"
 	@echo "... pingtaiport/guowang/examples/device_example_pile.i"
 	@echo "... pingtaiport/guowang/examples/device_example_pile.s"
+	@echo "... pingtaiport/sourcenetwork/src/netconnect.o"
+	@echo "... pingtaiport/sourcenetwork/src/netconnect.i"
+	@echo "... pingtaiport/sourcenetwork/src/netconnect.s"
 	@echo "... pingtaiport/tsfengchong/src/fengchong.o"
 	@echo "... pingtaiport/tsfengchong/src/fengchong.i"
 	@echo "... pingtaiport/tsfengchong/src/fengchong.s"

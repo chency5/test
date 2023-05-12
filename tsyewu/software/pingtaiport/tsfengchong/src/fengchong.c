@@ -25,6 +25,7 @@
 #include "proj_timer.h"
 #include "systemconfig.h"
 #include "crc.h"
+#include "netconnect.h"
 
 #define BAN_KA_PORT_NUM         1895
 #define MAX_LIST_NUM                    65536
@@ -75,12 +76,12 @@ static pthread_mutex_t fengChongLock = PTHREAD_MUTEX_INITIALIZER;
 static int fcFd = 0;
 
 static bool isConnect = false;
-
+static int BMSFlag[MAX_GUN_NUM] = {0};
 static int isSign = false;
 
 static int  listNum = 0;
 static int heartBeatNum = 0;
-
+extern net_connect_info *connectInfo;
 
 static int checkTimeResult = 1;
 
@@ -192,6 +193,8 @@ static int getFengChongAlarmData(int sourceData){
 	}
 	return convertId;
 }
+
+
 
 #if 0
 
@@ -330,7 +333,7 @@ static bool framingSendData(int gunNum,char cmd,char *dataBuf,int bufLen){
 	
 	sendBuf[i ++] = FRAME_TAIL;
 	
-	isSuccess = fengChongSend(sendBuf,totalLen);
+	isSuccess = tcpNetWorkSend(sendBuf,totalLen);
 	memset(sendBuf,0,sizeof(sendBuf));
 	
 	return isSuccess;
@@ -356,7 +359,7 @@ void historyUpFrame(void){
 	readFileLastPart(SUPPLY_HISTORY_PATH,buf,FC_HISTORY_MESSAGE_LEN);
 	if(buf[0] == 0x4b && buf[1] == 0x48){
 		pthread_mutex_lock(&fengChongLock);
-		fengChongSend(buf,FC_HISTORY_MESSAGE_LEN);
+		tcpNetWorkSend(buf,FC_HISTORY_MESSAGE_LEN);
 		pthread_mutex_unlock(&fengChongLock);
 	}
 }
@@ -644,6 +647,93 @@ void chargeRealDataFrame(int gunNum){
 
 	pthread_mutex_lock(&fengChongLock);
 	framingSendData((gunNum + 1),REAL_DATA_UP,buf,i);
+	pthread_mutex_unlock(&fengChongLock);
+
+	return;
+}
+
+void BMSDataFrame(int gunNum){
+	char buf[200] = {0};
+	int i = 0,k;
+		for(k = 0 ; k < 32 ; k ++){
+		buf[i ++] = getUserAccountInfo(gunNum).cloudTradeNum[k];
+	}
+	for(k = 0; k < 32 ; k ++){
+		buf[i ++] = getChargerBlockInfo(gunNum).chargingList[k];
+	}
+	switch(getChargerBlockInfo(gunNum).gunState){
+		case IDEL: buf[i ++] = 0; break;
+		case PLUG_IN: buf[i ++] = 1; break;
+		case HANDSHAKE: buf[i ++] = 5; break;
+		case CONFIG: buf[i ++] = 5; break;
+		case CHARGING: buf[i ++] = 2; break;
+		case STOP: buf[i ++] = 7; break;
+		case FINISH_PLUG_IN: buf[i ++] = 3; break;
+		case UPGRADE: buf[i ++] = 0; break;
+		case FAULT: buf[i ++] = 6; break;
+		default: i++;break;
+	}
+	buf[i ++] = getChargerBlockInfo(gunNum).BMSConnectVersion >> 16 & 0xff;
+	buf[i ++] = getChargerBlockInfo(gunNum).BMSConnectVersion >> 8 & 0xff;
+	buf[i ++] = getChargerBlockInfo(gunNum).BMSConnectVersion & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryType;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryRateCapacity >> 24 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryRateCapacity >> 16 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryRateCapacity >> 8 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryRateCapacity & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryTotalVol>> 24 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryTotalVol >> 16 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryTotalVol >> 8 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryTotalVol & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryManufacture>> 24 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryManufacture >> 16 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryManufacture >> 8 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryManufacture & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryList>> 24 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryList >> 16 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryList >> 8 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryList & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryProduceYear >> 8 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryProduceYear & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryProduceMonth ;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryProduceDay ;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryChargeNum>> 24 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryChargeNum >> 16 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryChargeNum >> 8 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryChargeNum & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryFlag ;
+	memcpy(&buf[i],&getChargerBlockInfo(gunNum).vehicleVin[0],17);
+	i += 17;
+	memcpy(&buf[i],&getChargerBlockInfo(gunNum).BMSVersion[0],8);
+	i += 8;
+	buf[i ++] = getBatteryBlockInfo(gunNum).singleBatteryMaxVol>> 24 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).singleBatteryMaxVol >> 16 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).singleBatteryMaxVol >> 8 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).singleBatteryMaxVol & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).maxChargeCurrent>> 24 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).maxChargeCurrent >> 16 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).maxChargeCurrent >> 8 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).maxChargeCurrent & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryRateCapacity>> 24 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryRateCapacity >> 16 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryRateCapacity >> 8 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryRateCapacity & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryTotalVol>> 24 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryTotalVol >> 16 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryTotalVol >> 8 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryTotalVol & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryMaxChargeTemp ;
+	buf[i ++] = getChargerBlockInfo(gunNum).firstSoc * 10 >> 16 & 0xff;
+	buf[i ++] = getChargerBlockInfo(gunNum).firstSoc * 10 >> 8 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryCurrentVol>> 24 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryCurrentVol >> 16 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryCurrentVol >> 8 & 0xff;
+	buf[i ++] = getBatteryBlockInfo(gunNum).batteryCurrentVol & 0xff;
+	buf[i ++] = 0xff;
+	buf[i ++] = 0xff;
+	
+	pthread_mutex_lock(&fengChongLock);
+	framingSendData((gunNum + 1),BMS_MES_UP,buf,i);
 	pthread_mutex_unlock(&fengChongLock);
 
 	return;
@@ -1135,8 +1225,8 @@ void cardResultConfirm(int gunNum,char *buf){
 
 void historyConfiurm(int gunNum,char *buf){
 	printf("recv  history  confiurm gunNum = %d \n",gunNum);
-	if(*buf == 0)
-		historyFrame(gunNum);
+	// if(*buf == 0)
+	// 	historyFrame(gunNum);
 	if(*buf == 1)
 		deleteFileLastPart(SUPPLY_HISTORY_PATH,FC_HISTORY_MESSAGE_LEN);
 	return;
@@ -1563,6 +1653,10 @@ void parseFengChongRecvData(char cmdNum,int gunNum,char *getBuf){
 
 		}break;
 
+		case BMS_MES_DOWN:{
+			BMSFlag[gunNum] = 0;
+		}break;
+
 		default:break;
 	}
 	
@@ -1600,7 +1694,7 @@ void judgeFrameIntegrity(char *getBuf ,int recvLen){
 				// printf("############  dealBuf[%d] = 0x%x\n",k,dealBuf[k]);
 				printf("0x%x ",dealBuf[k]);
 			}
-			parseFengChongRecvData( databuf[CMD_ADDR],databuf[GUN_NUM_ADDR],dealBuf);
+			parseFengChongRecvData( databuf[CMD_ADDR],databuf[GUN_NUM_ADDR]-1,dealBuf);
 		}
 	}
 	
@@ -1647,62 +1741,79 @@ void *fengChongRecv(){
 void fengChongTimer(){
 	int i = 0;
 	static int fengchongClick = 0;
-	fengchongClick++;								//++per100ms
-	judgeConnected();
-	
-	if(!isConnect){
-		isSign = 0;
-		if(!(fengchongClick%10))
-			connectFengChong();
-	}
-	else{
-		if(!isSign ){
-			if(!(fengchongClick%100))
-			clientUpLoad();
+	while ((1)){
+		fengchongClick++;								//++per100ms
+		judgeConnected();
+		
+		if(!isConnect){
+			isSign = 0;
+			if(!(fengchongClick%10))
+				connectFengChong();
 		}
 		else{
-			if(!(fengchongClick%300))
-				heartBeat();	
-			for(i = 0 ; i < MAX_GUN_NUM ; i ++){
-				if(getChargerBlockInfo(i).isStartCharge == WORK_STATE){
-					if(!(fengchongClick%300-10)){
-						chargeRealDataFrame(i);
-					}
-					if(gunWorkBuf[i] == 0){
-						gunWorkBuf[i] = 1;
-					}
-				}else{
-					if(gunWorkBuf[i] == 1){
-						gunWorkBuf[i] = 0;
-						historyFrame(i);
-						mSleep(5);
-						historyUpFrame();
-					}
-					// historyFrame(i);
-			//		activeUpLoadFrame(i);
-					// mSleep(1000);
-				}
+			if(!isSign ){
+				if(!(fengchongClick%100))
+				clientUpLoad();
 			}
-			if(!(fengchongClick%100-20))
-				historyUpFrame();
+			else{
+				if(!(fengchongClick%300))
+					heartBeat();	
+				for(i = 0 ; i < MAX_GUN_NUM ; i ++){
+					if(getChargerBlockInfo(i).isStartCharge == WORK_STATE){
+						if(!(fengchongClick%300-10)){
+							chargeRealDataFrame(i);
+						}
+						if(gunWorkBuf[i] == 0){
+							gunWorkBuf[i] = 1;
+							BMSDataFrame(i);
+							BMSFlag[i] = 1;
+						}
+						if(BMSFlag[i] && !(fengchongClick%50)){
+							BMSDataFrame(i);
+						}
+					}else{
+						if(gunWorkBuf[i] == 1){
+							gunWorkBuf[i] = 0;
+							historyFrame(i);
+							mSleep(5);
+							historyUpFrame();
+						}
+						// historyFrame(i);
+				//		activeUpLoadFrame(i);
+						// mSleep(1000);
+					}
+				}
+				if(!(fengchongClick%100-20))
+					historyUpFrame();
 
+			}
 		}
-	}
 	mSleep(100);
+	}
 }
 
 void initFengChong(){
 	TRACE_PROJ_SOCKET_INFO("#########  initFengChong  #############\n");
 //	pthread_mutex_init(&fengChongLock,NULL);
+//	netConnectInit();
+	ctrlNetConnectInfo()->netFd = 0;
+	ctrlNetConnectInfo()->isConnect = false;
+	ctrlNetConnectInfo()->isLogOn = false;
+	ctrlNetConnectInfo()->sendCount = 0;
+//	strcpy(ctrlNetConnectInfo()->serviceIp,"192.168.1.130");
+//	ctrlNetConnectInfo()->servicePort = 8080;
+	ctrlNetConnectInfo()->dealfun = judgeFrameIntegrity;
 
-	
+
+
+
 
 #if	1
-	connectFengChong();
+	
 
 	mSleep(300);
-	clientUpLoad();
-	create_thread(NULL,fengChongRecv,15);
+	// clientUpLoad();
+	// create_thread(NULL,fengChongRecv,15);
 	create_thread(NULL,fengChongTimer,15);
 	// initFengChongTimerList = proj_Timer_Init("fengChongTimer");
 	// initFengChongTimerId = proj_Timer_Add(initFengChongTimerList,"fengChongTimer",fengChongTimer,NULL,1000,1);

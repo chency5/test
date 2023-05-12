@@ -18,6 +18,7 @@ include_directories(
 	${CMAKE_CURRENT_SOURCE_DIR}/pingtaiport/tsfengchong/inc
 	${CMAKE_CURRENT_SOURCE_DIR}/pingtaiport/xiaoju/inc
 	${CMAKE_CURRENT_SOURCE_DIR}/pingtaiport/yunwei/inc
+        ${CMAKE_CURRENT_SOURCE_DIR}/pingtaiport/sourcenetwork/inc
 
 	${CMAKE_CURRENT_SOURCE_DIR}/pingtaiport/guowang/eng
         ${CMAKE_CURRENT_SOURCE_DIR}/pingtaiport/guowang/eng/dev_model

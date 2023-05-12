@@ -1569,9 +1569,33 @@ software/CMakeFiles/fun_lib.dir/pingtaiport/guowang/examples/device_example_pile
 software/CMakeFiles/fun_lib.dir/pingtaiport/guowang/examples/device_example_pile.c.o.provides.build: software/CMakeFiles/fun_lib.dir/pingtaiport/guowang/examples/device_example_pile.c.o
 
 
+software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.o: software/CMakeFiles/fun_lib.dir/flags.make
+software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.o: ../software/pingtaiport/sourcenetwork/src/netconnect.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/forlinx/shell/tsyewu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.o"
+	cd /home/forlinx/shell/tsyewu/build/software && /opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi/arm-poky-linux-gnueabi-gcc   -march=armv7ve -mfpu=neon  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.o   -c /home/forlinx/shell/tsyewu/software/pingtaiport/sourcenetwork/src/netconnect.c
+
+software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.i"
+	cd /home/forlinx/shell/tsyewu/build/software && /opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi/arm-poky-linux-gnueabi-gcc   -march=armv7ve -mfpu=neon  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/forlinx/shell/tsyewu/software/pingtaiport/sourcenetwork/src/netconnect.c > CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.i
+
+software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.s"
+	cd /home/forlinx/shell/tsyewu/build/software && /opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi/arm-poky-linux-gnueabi-gcc   -march=armv7ve -mfpu=neon  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/forlinx/shell/tsyewu/software/pingtaiport/sourcenetwork/src/netconnect.c -o CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.s
+
+software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.o.requires:
+
+.PHONY : software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.o.requires
+
+software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.o.provides: software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.o.requires
+	$(MAKE) -f software/CMakeFiles/fun_lib.dir/build.make software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.o.provides.build
+.PHONY : software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.o.provides
+
+software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.o.provides.build: software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.o
+
+
 software/CMakeFiles/fun_lib.dir/pingtaiport/tsfengchong/src/fengchong.c.o: software/CMakeFiles/fun_lib.dir/flags.make
 software/CMakeFiles/fun_lib.dir/pingtaiport/tsfengchong/src/fengchong.c.o: ../software/pingtaiport/tsfengchong/src/fengchong.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/forlinx/shell/tsyewu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object software/CMakeFiles/fun_lib.dir/pingtaiport/tsfengchong/src/fengchong.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/forlinx/shell/tsyewu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object software/CMakeFiles/fun_lib.dir/pingtaiport/tsfengchong/src/fengchong.c.o"
 	cd /home/forlinx/shell/tsyewu/build/software && /opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi/arm-poky-linux-gnueabi-gcc   -march=armv7ve -mfpu=neon  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fun_lib.dir/pingtaiport/tsfengchong/src/fengchong.c.o   -c /home/forlinx/shell/tsyewu/software/pingtaiport/tsfengchong/src/fengchong.c
 
 software/CMakeFiles/fun_lib.dir/pingtaiport/tsfengchong/src/fengchong.c.i: cmake_force
@@ -1595,7 +1619,7 @@ software/CMakeFiles/fun_lib.dir/pingtaiport/tsfengchong/src/fengchong.c.o.provid
 
 software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/mqtt.c.o: software/CMakeFiles/fun_lib.dir/flags.make
 software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/mqtt.c.o: ../software/pingtaiport/xiaoju/src/mqtt.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/forlinx/shell/tsyewu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/mqtt.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/forlinx/shell/tsyewu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/mqtt.c.o"
 	cd /home/forlinx/shell/tsyewu/build/software && /opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi/arm-poky-linux-gnueabi-gcc   -march=armv7ve -mfpu=neon  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/mqtt.c.o   -c /home/forlinx/shell/tsyewu/software/pingtaiport/xiaoju/src/mqtt.c
 
 software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/mqtt.c.i: cmake_force
@@ -1619,7 +1643,7 @@ software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/mqtt.c.o.provides.build: 
 
 software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju.c.o: software/CMakeFiles/fun_lib.dir/flags.make
 software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju.c.o: ../software/pingtaiport/xiaoju/src/xiaoju.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/forlinx/shell/tsyewu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/forlinx/shell/tsyewu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju.c.o"
 	cd /home/forlinx/shell/tsyewu/build/software && /opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi/arm-poky-linux-gnueabi-gcc   -march=armv7ve -mfpu=neon  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju.c.o   -c /home/forlinx/shell/tsyewu/software/pingtaiport/xiaoju/src/xiaoju.c
 
 software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju.c.i: cmake_force
@@ -1643,7 +1667,7 @@ software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju.c.o.provides.build
 
 software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju_app.c.o: software/CMakeFiles/fun_lib.dir/flags.make
 software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju_app.c.o: ../software/pingtaiport/xiaoju/src/xiaoju_app.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/forlinx/shell/tsyewu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju_app.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/forlinx/shell/tsyewu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju_app.c.o"
 	cd /home/forlinx/shell/tsyewu/build/software && /opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi/arm-poky-linux-gnueabi-gcc   -march=armv7ve -mfpu=neon  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju_app.c.o   -c /home/forlinx/shell/tsyewu/software/pingtaiport/xiaoju/src/xiaoju_app.c
 
 software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju_app.c.i: cmake_force
@@ -1667,7 +1691,7 @@ software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju_app.c.o.provides.b
 
 software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju_pal.c.o: software/CMakeFiles/fun_lib.dir/flags.make
 software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju_pal.c.o: ../software/pingtaiport/xiaoju/src/xiaoju_pal.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/forlinx/shell/tsyewu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju_pal.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/forlinx/shell/tsyewu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju_pal.c.o"
 	cd /home/forlinx/shell/tsyewu/build/software && /opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi/arm-poky-linux-gnueabi-gcc   -march=armv7ve -mfpu=neon  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju_pal.c.o   -c /home/forlinx/shell/tsyewu/software/pingtaiport/xiaoju/src/xiaoju_pal.c
 
 software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju_pal.c.i: cmake_force
@@ -1691,7 +1715,7 @@ software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju_pal.c.o.provides.b
 
 software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju_phm.c.o: software/CMakeFiles/fun_lib.dir/flags.make
 software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju_phm.c.o: ../software/pingtaiport/xiaoju/src/xiaoju_phm.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/forlinx/shell/tsyewu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju_phm.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/forlinx/shell/tsyewu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju_phm.c.o"
 	cd /home/forlinx/shell/tsyewu/build/software && /opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi/arm-poky-linux-gnueabi-gcc   -march=armv7ve -mfpu=neon  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju_phm.c.o   -c /home/forlinx/shell/tsyewu/software/pingtaiport/xiaoju/src/xiaoju_phm.c
 
 software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju_phm.c.i: cmake_force
@@ -1715,7 +1739,7 @@ software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju_phm.c.o.provides.b
 
 software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaojuprotocol.c.o: software/CMakeFiles/fun_lib.dir/flags.make
 software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaojuprotocol.c.o: ../software/pingtaiport/xiaoju/src/xiaojuprotocol.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/forlinx/shell/tsyewu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaojuprotocol.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/forlinx/shell/tsyewu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaojuprotocol.c.o"
 	cd /home/forlinx/shell/tsyewu/build/software && /opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi/arm-poky-linux-gnueabi-gcc   -march=armv7ve -mfpu=neon  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaojuprotocol.c.o   -c /home/forlinx/shell/tsyewu/software/pingtaiport/xiaoju/src/xiaojuprotocol.c
 
 software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaojuprotocol.c.i: cmake_force
@@ -1739,7 +1763,7 @@ software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaojuprotocol.c.o.provid
 
 software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/httpconnect.c.o: software/CMakeFiles/fun_lib.dir/flags.make
 software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/httpconnect.c.o: ../software/pingtaiport/yunwei/src/httpconnect.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/forlinx/shell/tsyewu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/httpconnect.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/forlinx/shell/tsyewu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/httpconnect.c.o"
 	cd /home/forlinx/shell/tsyewu/build/software && /opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi/arm-poky-linux-gnueabi-gcc   -march=armv7ve -mfpu=neon  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/httpconnect.c.o   -c /home/forlinx/shell/tsyewu/software/pingtaiport/yunwei/src/httpconnect.c
 
 software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/httpconnect.c.i: cmake_force
@@ -1763,7 +1787,7 @@ software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/httpconnect.c.o.provides.
 
 software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/yunwei.c.o: software/CMakeFiles/fun_lib.dir/flags.make
 software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/yunwei.c.o: ../software/pingtaiport/yunwei/src/yunwei.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/forlinx/shell/tsyewu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/yunwei.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/forlinx/shell/tsyewu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/yunwei.c.o"
 	cd /home/forlinx/shell/tsyewu/build/software && /opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi/arm-poky-linux-gnueabi-gcc   -march=armv7ve -mfpu=neon  -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/opt/fsl-imx-x11/4.1.15-2.0.0/sysroots/cortexa7hf-neon-poky-linux-gnueabi $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/yunwei.c.o   -c /home/forlinx/shell/tsyewu/software/pingtaiport/yunwei/src/yunwei.c
 
 software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/yunwei.c.i: cmake_force
@@ -1850,6 +1874,7 @@ fun_lib_OBJECTS = \
 "CMakeFiles/fun_lib.dir/pingtaiport/guowang/eng/wrappers/external_libs/mbedtls/library/aes.c.o" \
 "CMakeFiles/fun_lib.dir/pingtaiport/guowang/eng/wrappers/wrappers.c.o" \
 "CMakeFiles/fun_lib.dir/pingtaiport/guowang/examples/device_example_pile.c.o" \
+"CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.o" \
 "CMakeFiles/fun_lib.dir/pingtaiport/tsfengchong/src/fengchong.c.o" \
 "CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/mqtt.c.o" \
 "CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju.c.o" \
@@ -1926,6 +1951,7 @@ lib/libfun_lib.a: software/CMakeFiles/fun_lib.dir/pingtaiport/guowang/eng/wrappe
 lib/libfun_lib.a: software/CMakeFiles/fun_lib.dir/pingtaiport/guowang/eng/wrappers/external_libs/mbedtls/library/aes.c.o
 lib/libfun_lib.a: software/CMakeFiles/fun_lib.dir/pingtaiport/guowang/eng/wrappers/wrappers.c.o
 lib/libfun_lib.a: software/CMakeFiles/fun_lib.dir/pingtaiport/guowang/examples/device_example_pile.c.o
+lib/libfun_lib.a: software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.o
 lib/libfun_lib.a: software/CMakeFiles/fun_lib.dir/pingtaiport/tsfengchong/src/fengchong.c.o
 lib/libfun_lib.a: software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/mqtt.c.o
 lib/libfun_lib.a: software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju.c.o
@@ -1937,7 +1963,7 @@ lib/libfun_lib.a: software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/httpcon
 lib/libfun_lib.a: software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/yunwei.c.o
 lib/libfun_lib.a: software/CMakeFiles/fun_lib.dir/build.make
 lib/libfun_lib.a: software/CMakeFiles/fun_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/forlinx/shell/tsyewu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Linking C static library ../lib/libfun_lib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/forlinx/shell/tsyewu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Linking C static library ../lib/libfun_lib.a"
 	cd /home/forlinx/shell/tsyewu/build/software && $(CMAKE_COMMAND) -P CMakeFiles/fun_lib.dir/cmake_clean_target.cmake
 	cd /home/forlinx/shell/tsyewu/build/software && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/fun_lib.dir/link.txt --verbose=$(VERBOSE)
 
@@ -2009,6 +2035,7 @@ software/CMakeFiles/fun_lib.dir/requires: software/CMakeFiles/fun_lib.dir/pingta
 software/CMakeFiles/fun_lib.dir/requires: software/CMakeFiles/fun_lib.dir/pingtaiport/guowang/eng/wrappers/external_libs/mbedtls/library/aes.c.o.requires
 software/CMakeFiles/fun_lib.dir/requires: software/CMakeFiles/fun_lib.dir/pingtaiport/guowang/eng/wrappers/wrappers.c.o.requires
 software/CMakeFiles/fun_lib.dir/requires: software/CMakeFiles/fun_lib.dir/pingtaiport/guowang/examples/device_example_pile.c.o.requires
+software/CMakeFiles/fun_lib.dir/requires: software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.o.requires
 software/CMakeFiles/fun_lib.dir/requires: software/CMakeFiles/fun_lib.dir/pingtaiport/tsfengchong/src/fengchong.c.o.requires
 software/CMakeFiles/fun_lib.dir/requires: software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/mqtt.c.o.requires
 software/CMakeFiles/fun_lib.dir/requires: software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju.c.o.requires

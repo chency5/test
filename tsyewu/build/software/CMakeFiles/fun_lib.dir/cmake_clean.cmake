@@ -62,6 +62,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/fun_lib.dir/pingtaiport/guowang/eng/wrappers/external_libs/mbedtls/library/aes.c.o"
   "CMakeFiles/fun_lib.dir/pingtaiport/guowang/eng/wrappers/wrappers.c.o"
   "CMakeFiles/fun_lib.dir/pingtaiport/guowang/examples/device_example_pile.c.o"
+  "CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.o"
   "CMakeFiles/fun_lib.dir/pingtaiport/tsfengchong/src/fengchong.c.o"
   "CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/mqtt.c.o"
   "CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaoju.c.o"

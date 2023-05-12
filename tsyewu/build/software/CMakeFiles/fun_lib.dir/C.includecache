@@ -18,15 +18,71 @@ stdio.h
 
 ../software/inc/control.h
 
+../software/inc/curl.h
+curlver.h
+../software/inc/curlver.h
+system.h
+../software/inc/system.h
+stdio.h
+-
+limits.h
+-
+osreldate.h
+-
+sys/types.h
+-
+time.h
+-
+winsock2.h
+-
+ws2tcpip.h
+-
+sys/select.h
+-
+sys/socket.h
+-
+sys/time.h
+-
+support/SupportDefs.h
+-
+easy.h
+../software/inc/easy.h
+multi.h
+../software/inc/multi.h
+typecheck-gcc.h
+../software/inc/typecheck-gcc.h
+
+../software/inc/curlver.h
+
 ../software/inc/datacenter.h
 stdbool.h
 -
+
+../software/inc/easy.h
 
 ../software/inc/init.h
 
 ../software/inc/modbus_protocol.h
 
+../software/inc/multi.h
+curl.h
+../software/inc/curl.h
+
+../software/inc/system.h
+winsock2.h
+-
+windows.h
+-
+ws2tcpip.h
+-
+sys/types.h
+-
+sys/socket.h
+-
+
 ../software/inc/systemconfig.h
+
+../software/inc/typecheck-gcc.h
 
 ../software/pingtaiport/guowang/eng/dev_model/interface.h
 protocol_data_def.h
@@ -169,6 +225,8 @@ infra_types.h
 ../software/pingtaiport/guowang/eng/wrappers/infra_types.h
 infra_defs.h
 ../software/pingtaiport/guowang/eng/wrappers/infra_defs.h
+
+../software/pingtaiport/sourcenetwork/inc/netconnect.h
 
 ../software/pingtaiport/tsfengchong/inc/fengchong.h
 
@@ -1552,6 +1610,58 @@ string.h
 
 /home/forlinx/shell/tsyewu/software/pingtaiport/guowang/examples/device_example_pile.h
 
+/home/forlinx/shell/tsyewu/software/pingtaiport/sourcenetwork/src/netconnect.c
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+errno.h
+-
+pthread.h
+-
+unistd.h
+-
+sys/stat.h
+-
+sys/types.h
+-
+dirent.h
+-
+stdbool.h
+-
+sys/signal.h
+-
+linux/types.h
+-
+asm/byteorder.h
+-
+linux/ip.h
+-
+netinet/tcp.h
+-
+sys/types.h
+-
+sys/socket.h
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+netconnect.h
+/home/forlinx/shell/tsyewu/software/pingtaiport/sourcenetwork/src/netconnect.h
+projdebug.h
+/home/forlinx/shell/tsyewu/software/pingtaiport/sourcenetwork/src/projdebug.h
+utily.h
+/home/forlinx/shell/tsyewu/software/pingtaiport/sourcenetwork/src/utily.h
+proj_timer.h
+/home/forlinx/shell/tsyewu/software/pingtaiport/sourcenetwork/src/proj_timer.h
+systemconfig.h
+/home/forlinx/shell/tsyewu/software/pingtaiport/sourcenetwork/src/systemconfig.h
+crc.h
+/home/forlinx/shell/tsyewu/software/pingtaiport/sourcenetwork/src/crc.h
+
 /home/forlinx/shell/tsyewu/software/pingtaiport/tsfengchong/src/fengchong.c
 stdio.h
 -
@@ -1605,6 +1715,8 @@ systemconfig.h
 /home/forlinx/shell/tsyewu/software/pingtaiport/tsfengchong/src/systemconfig.h
 crc.h
 /home/forlinx/shell/tsyewu/software/pingtaiport/tsfengchong/src/crc.h
+netconnect.h
+/home/forlinx/shell/tsyewu/software/pingtaiport/tsfengchong/src/netconnect.h
 
 /home/forlinx/shell/tsyewu/software/pingtaiport/xiaoju/src/mqtt.c
 mqtt.h
@@ -1719,6 +1831,8 @@ crc.h
 /home/forlinx/shell/tsyewu/software/pingtaiport/yunwei/src/crc.h
 modbus_protocol.h
 /home/forlinx/shell/tsyewu/software/pingtaiport/yunwei/src/modbus_protocol.h
+curl.h
+/home/forlinx/shell/tsyewu/software/pingtaiport/yunwei/src/curl.h
 
 /home/forlinx/shell/tsyewu/software/pingtaiport/yunwei/src/yunwei.c
 stdio.h

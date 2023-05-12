@@ -1315,9 +1315,18 @@ software/CMakeFiles/fun_lib.dir/pingtaiport/guowang/examples/device_example_pile
  ../tool/public/inc/utily.h
  /home/forlinx/shell/tsyewu/software/pingtaiport/guowang/examples/device_example_pile.c
  /home/forlinx/shell/tsyewu/software/pingtaiport/guowang/examples/device_example_pile.h
+software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.o
+ ../software/inc/systemconfig.h
+ ../software/pingtaiport/sourcenetwork/inc/netconnect.h
+ ../tool/public/inc/crc.h
+ ../tool/public/inc/projdebug.h
+ ../tool/public/inc/utily.h
+ ../tool/timer/inc/proj_timer.h
+ /home/forlinx/shell/tsyewu/software/pingtaiport/sourcenetwork/src/netconnect.c
 software/CMakeFiles/fun_lib.dir/pingtaiport/tsfengchong/src/fengchong.c.o
  ../software/inc/datacenter.h
  ../software/inc/systemconfig.h
+ ../software/pingtaiport/sourcenetwork/inc/netconnect.h
  ../software/pingtaiport/tsfengchong/inc/fengchong.h
  ../tool/public/inc/crc.h
  ../tool/public/inc/projdebug.h
@@ -1377,9 +1386,15 @@ software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaojuprotocol.c.o
  ../software/pingtaiport/xiaoju/inc/xiaojuprotocol.h
  /home/forlinx/shell/tsyewu/software/pingtaiport/xiaoju/src/xiaojuprotocol.c
 software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/httpconnect.c.o
+ ../software/inc/curl.h
+ ../software/inc/curlver.h
  ../software/inc/datacenter.h
+ ../software/inc/easy.h
  ../software/inc/modbus_protocol.h
+ ../software/inc/multi.h
+ ../software/inc/system.h
  ../software/inc/systemconfig.h
+ ../software/inc/typecheck-gcc.h
  ../software/pingtaiport/yunwei/inc/yunwei.h
  ../tool/json/inc/socket_cJSON.h
  ../tool/public/inc/crc.h

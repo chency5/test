@@ -35,11 +35,13 @@ void init(){
 //	setDeviceIp("169.254.99.100");
 	sleep(1);
 	printf("### %s \n",getLocalIp("eth0"));
-
+	netConnectMalloc();
 	 initFengChong();
+	 netConnectInit();
 //	gooseInitFunction();
 //	xiaoJuInit();
 	// yunWeiInit();
+	
 #if 0
 	for(i = 0 ; i < 20 ; i ++){
 		sendTestData();

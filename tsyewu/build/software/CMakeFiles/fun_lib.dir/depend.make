@@ -1315,8 +1315,17 @@ software/CMakeFiles/fun_lib.dir/pingtaiport/guowang/examples/device_example_pile
 software/CMakeFiles/fun_lib.dir/pingtaiport/guowang/examples/device_example_pile.c.o: ../software/pingtaiport/guowang/examples/device_example_pile.c
 software/CMakeFiles/fun_lib.dir/pingtaiport/guowang/examples/device_example_pile.c.o: ../software/pingtaiport/guowang/examples/device_example_pile.h
 
+software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.o: ../software/inc/systemconfig.h
+software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.o: ../software/pingtaiport/sourcenetwork/inc/netconnect.h
+software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.o: ../tool/public/inc/crc.h
+software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.o: ../tool/public/inc/projdebug.h
+software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.o: ../tool/public/inc/utily.h
+software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.o: ../tool/timer/inc/proj_timer.h
+software/CMakeFiles/fun_lib.dir/pingtaiport/sourcenetwork/src/netconnect.c.o: ../software/pingtaiport/sourcenetwork/src/netconnect.c
+
 software/CMakeFiles/fun_lib.dir/pingtaiport/tsfengchong/src/fengchong.c.o: ../software/inc/datacenter.h
 software/CMakeFiles/fun_lib.dir/pingtaiport/tsfengchong/src/fengchong.c.o: ../software/inc/systemconfig.h
+software/CMakeFiles/fun_lib.dir/pingtaiport/tsfengchong/src/fengchong.c.o: ../software/pingtaiport/sourcenetwork/inc/netconnect.h
 software/CMakeFiles/fun_lib.dir/pingtaiport/tsfengchong/src/fengchong.c.o: ../software/pingtaiport/tsfengchong/inc/fengchong.h
 software/CMakeFiles/fun_lib.dir/pingtaiport/tsfengchong/src/fengchong.c.o: ../tool/public/inc/crc.h
 software/CMakeFiles/fun_lib.dir/pingtaiport/tsfengchong/src/fengchong.c.o: ../tool/public/inc/projdebug.h
@@ -1376,9 +1385,15 @@ software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaojuprotocol.c.o: ../so
 software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaojuprotocol.c.o: ../software/pingtaiport/xiaoju/inc/xiaojuprotocol.h
 software/CMakeFiles/fun_lib.dir/pingtaiport/xiaoju/src/xiaojuprotocol.c.o: ../software/pingtaiport/xiaoju/src/xiaojuprotocol.c
 
+software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/httpconnect.c.o: ../software/inc/curl.h
+software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/httpconnect.c.o: ../software/inc/curlver.h
 software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/httpconnect.c.o: ../software/inc/datacenter.h
+software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/httpconnect.c.o: ../software/inc/easy.h
 software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/httpconnect.c.o: ../software/inc/modbus_protocol.h
+software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/httpconnect.c.o: ../software/inc/multi.h
+software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/httpconnect.c.o: ../software/inc/system.h
 software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/httpconnect.c.o: ../software/inc/systemconfig.h
+software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/httpconnect.c.o: ../software/inc/typecheck-gcc.h
 software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/httpconnect.c.o: ../software/pingtaiport/yunwei/inc/yunwei.h
 software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/httpconnect.c.o: ../tool/json/inc/socket_cJSON.h
 software/CMakeFiles/fun_lib.dir/pingtaiport/yunwei/src/httpconnect.c.o: ../tool/public/inc/crc.h

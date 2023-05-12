@@ -13,3 +13,4 @@ mkdir build/
 mkdir build/bin
 mkdir build/lib
 cd build && cmake ../ && make
+cd ../

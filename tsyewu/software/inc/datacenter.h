@@ -295,7 +295,7 @@ typedef enum{
 	CHARGING,                      //gun charging segment
 	STOP,                                 // gun stop segment
 	FINISH_PLUG_IN,     // charge finish but do not plug out the gun
-	UPGRADE,                     //ungrade state
+	UPGRADE,                     //upgrade state
 	FAULT                             //fault state
 }gunStateInfo;
 
